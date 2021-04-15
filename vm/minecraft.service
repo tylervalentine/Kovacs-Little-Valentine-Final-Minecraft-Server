@@ -1,0 +1,12 @@
+[Unit]
+Description=Run Minecraft Server
+After=network.target
+
+[Service]
+User=vagrant
+Group=vagrant
+WorkingDirectory=/server
+ExecStart=/usr/bin/java -Xmx1024M -Xms1024M -jar server.jar nogui
+
+[Install]
+WantedBy=multi-user.target
