@@ -6,7 +6,7 @@ After=network.target
 User=vagrant
 Group=vagrant
 WorkingDirectory=/server
-ExecStart=/usr/bin/java -Xmx1024M -Xms1024M -jar server.jar nogui
+ExecStart=/usr/bin/java -Xmx1024M -Xms1024M -jar spigot-1.16.5.jar nogui
 
 [Install]
 WantedBy=multi-user.target

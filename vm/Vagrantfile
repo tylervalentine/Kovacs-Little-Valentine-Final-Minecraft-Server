@@ -73,19 +73,18 @@ Vagrant.configure("2") do |config|
     chown vagrant:vagrant -R /server # Necessary for minecraft to make new sub directories.
     cd /server
 
-    cp -r /vagrant_data/server.jar .
+    cp -r /vagrant_data/server_files/* .
     
-    echo 'eula=true' > eula.txt # Necessary to sign EULA agreement to run minecraft
-
     cp -r /vagrant_data/minecraft.service /etc/systemd/system
     systemctl enable minecraft.service
     systemctl start minecraft.service
 
     # https://www.youtube.com/watch?v=dC-hecmyxr4&ab_channel=ForeverJonny
-    snap install ngrok # NGROK allos anyone to join the server
+    snap install ngrok # NGROK allows anyone to join the server if they have the link
     ngrok authtoken 1r876itpaXZWHSQFbT8qLeDkbbS_adj4zYJZuGfyYtFGYTtX
     ngrok tcp -region us 25565 &
-    # curl http://127.0.0.1:4040/api/tunnels
+    sleep 3
+    curl http://127.0.0.1:4040/api/tunnels
     
   SHELL
 end
