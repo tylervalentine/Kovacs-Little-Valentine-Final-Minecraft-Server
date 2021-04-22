@@ -1,0 +1,28 @@
+[09:06:46] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[09:06:47] [main/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[09:06:47] [main/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[09:06:47] [main/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[09:06:47] [main/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[09:06:47] [main/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[09:06:47] [main/INFO]: Reloading ResourceManager: Default
+[09:06:48] [Worker-Main-14/INFO]: Loaded 7 recipes
+[09:06:48] [Worker-Main-14/INFO]: Loaded 927 advancements
+[09:06:49] [Server thread/INFO]: Starting minecraft server version 1.16.5
+[09:06:49] [Server thread/INFO]: Loading properties
+[09:06:49] [Server thread/INFO]: Default game type: SURVIVAL
+[09:06:49] [Server thread/INFO]: Generating keypair
+[09:06:50] [Server thread/INFO]: Starting Minecraft server on *:25565
+[09:06:50] [Server thread/INFO]: Using default channel type
+[09:06:50] [Server thread/WARN]: **** FAILED TO BIND TO PORT!
+[09:06:50] [Server thread/WARN]: The exception was: java.net.BindException: Address already in use
+[09:06:50] [Server thread/WARN]: Perhaps a server is already running on that port?
+[09:06:50] [Server thread/INFO]: Stopping server
+[09:06:50] [Server thread/INFO]: Saving worlds
+[09:06:50] [Server thread/ERROR]: Exception stopping the server
+java.lang.NullPointerException: Cannot invoke "aag.f()" because "☃" is null
+	at net.minecraft.server.MinecraftServer.a(SourceFile:572) ~[server.jar:?]
+	at net.minecraft.server.MinecraftServer.t(SourceFile:599) ~[server.jar:?]
+	at zg.t(SourceFile:567) ~[server.jar:?]
+	at net.minecraft.server.MinecraftServer.w(SourceFile:707) ~[server.jar:?]
+	at net.minecraft.server.MinecraftServer.a(SourceFile:257) ~[server.jar:?]
+	at java.lang.Thread.run(Thread.java:831) [?:?]
