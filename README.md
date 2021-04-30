@@ -53,4 +53,3 @@ To start the Minecraft server using AWS:
   ```
   Launch Minecraft. Enter your unique IP address into the Multiplayer/server and press Done.
 ```
->>>>>>> main
