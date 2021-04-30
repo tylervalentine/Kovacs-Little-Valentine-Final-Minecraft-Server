@@ -9,7 +9,7 @@
     killall ngrok
 
     # start ngrok
-    (../../../../../Downloads/ngrok tcp 25565 -log=stdout &)
+    (./ngrok tcp 25565 -log=stdout &)
 
     # start the server
     java -jar spigot-1.16.5.jar nogui
