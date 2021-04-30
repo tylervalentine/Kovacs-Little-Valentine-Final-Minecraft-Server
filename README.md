@@ -1,5 +1,3 @@
-<<<<<<< main
-=======
 # Kovacs-Little-Valentine-Final-Minecraft-Server by Nikolas Kovacs, Tyler Valentine, and Cory Little
 
 ## Host a Minecraft server locally, in Vagrant, and on AWS
