@@ -16,3 +16,5 @@
 
     # if the server stops (/stop or crash), stop ngrok
     killall ngrok
+    
+    #Link to tutorial: https://www.ravbug.com/tutorials/mc-ngrok/
