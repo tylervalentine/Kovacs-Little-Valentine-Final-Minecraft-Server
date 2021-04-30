@@ -26,10 +26,10 @@ vagrant up
 
 To start the Minecraft server using AWS:
 ```
-  1. Login into your AWS Account
-  2. Create a instance using Ubuntu
-  3. Add a new firewall rule to run port 25565 in the Networking table
-  4. Connect using SSH
+  1. Login into your AWS Account.
+  2. Create a instance using Ubuntu.
+  3. Add a new firewall rule to run port 25565 in the Networking tab.
+  4. Connect using SSH.
 ```
   Type these commands:
   ```
@@ -45,11 +45,9 @@ To start the Minecraft server using AWS:
         echo "eula=true" > eula.txt
       <!-- Re-run the Minecraft server command-->
       5. sudo java -Xmx1G -Xms1G -jar mcserver.jar nogui
+```
 
-      ```
   To Run the Minecraft server:
   ```
-
   Launch Minecraft. Enter your unique IP address into the Multiplayer/server and press Done.
-
-    ``` 
+```
