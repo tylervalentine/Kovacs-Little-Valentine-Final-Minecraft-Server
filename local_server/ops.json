@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "uuid": "6114d9f7-15ec-4ead-989f-511e4715cc7e",
+    "name": "TVal30",
+    "level": 4,
+    "bypassesPlayerLimit": true
+  }
+]
