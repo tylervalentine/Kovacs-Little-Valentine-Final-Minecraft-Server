@@ -6,11 +6,13 @@
 
 ## Requirements
 
-1. Ngrok Account for hosting locally and in Vagrant
+1. Vagrant for hosting in a VM
 
-2. Minecraft Client to join the game
+2. Ngrok Account for hosting locally and in Vagrant
 
-3. AWS account for hosting on AWS
+3. Minecraft Client to join the game
+
+4. AWS account for hosting on AWS
 
 ## Usage
 
