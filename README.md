@@ -69,8 +69,6 @@ SSH again and type these commands:
     <!-- Create a directory to hold the Minecraft files. -->
     2. mkdir ~/minecraft
     3. cd ~/minecraft
-    <!-- Accept the EULA agreement  -->
-    4. echo "eula=true" > eula.txt
 ```
 
   To Run the Minecraft server, ssh back into the Lightsail instance and run the following command:
