@@ -2,11 +2,13 @@
 
 ## Host a Minecraft server locally, in Vagrant, and on AWS
 
+## NOTE: all sources are linked in files where they were used
+
 ## Requirements
 
 1. Vagrant for hosting in a VM
 
-2. Ngrok Account for hosting locally and in Vagrant
+2. Ngrok for hosting locally and in Vagrant
 
 3. Minecraft Client to join the game
 
@@ -14,8 +16,14 @@
 
 ## Usage
 
-To start the Minecraft server locally, enter the local folder and type:
+To start the Minecraft server locally, enter the local_server folder...
 
+Edit the start_command.sh file and enter your auth token:
+```
+ngrok authtoken <auth token here>
+```
+
+Then run this command in terminal
 ```
 bash start_command.sh
 ```
