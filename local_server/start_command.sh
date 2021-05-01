@@ -1,3 +1,8 @@
+#!/bin/bash
+
+    ./ngrok authtoken 1rsAWN06PEISF3VRO8klqvP8fur_2rWpPWvrkGp8xwJx1MMVn
+
+
 # Stop ngrok if the script is stopped with ctrl-c
     trap ctrl_c INT
 
