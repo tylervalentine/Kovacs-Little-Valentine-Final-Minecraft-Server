@@ -17,7 +17,7 @@
 To start the Minecraft server locally, enter the local folder and type:
 
 ```
-bash start_server.sh
+bash start_command.sh
 ```
 
 To start the Minecraft server in Vagrant, enter the vm folder and type:
@@ -26,30 +26,56 @@ To start the Minecraft server in Vagrant, enter the vm folder and type:
 vagrant up
 ```
 
-To start the Minecraft server using AWS:
+To start the Minecraft server using AWS Lightsail:
 ```
   1. Login into your AWS Account.
-  2. Create a instance using Ubuntu.
-  3. Add a new firewall rule to run port 25565 in the Networking tab.
-  4. Connect using SSH.
+  2. Create a Lightsail instance using Ubuntu.
+  3. Add a new firewall rule to run port 25565 in the Networking tab on the AWS website.
+  4. Setup ssh config to connect to Lightsail instance using the default key
 ```
-  Type these commands:
-  ```
-    <!-- Update the server and install the Java Runtime. -->
-      1. sudo apt -y update && sudo apt -y install default-jre screen
-      <!-- Create a directory to hold the Minecraft files. -->
-      2. sudo mkdir /usr/games/minecraft
-      cd /usr/games/minecraft
-      <!-- Go to Minercraft website and download the server. Also, download the server jar file -->
-      3. sudo wget -O mcserver.jar https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar
-      <!-- Change ownership of eula.txt and accept the EULA to true  -->
-      4. sudo chown ubuntu eula.txt
-        echo "eula=true" > eula.txt
-      <!-- Re-run the Minecraft server command-->
-      5. sudo java -Xmx1G -Xms1G -jar mcserver.jar nogui
+To setup the config file for ssh:
+```
+nano ~/.ssh/config
 ```
 
-  To Run the Minecraft server:
-  ```
-  Launch Minecraft. Enter your unique IP address into the Multiplayer/server and press Done.
+Add the following to the config file
+```
+Host <name_of_aws_instance>
+  User <user>
+  HostName <IP Address>
+  IdentityFile <Path to default lightsail pem file>
+```
+
+SSH into the Lightsail instance and run the following commands
+```
+ssh <name_of_aws_instance> (NOTE: this is the same name from the previous step)
+
+<!-- Update the server and install the Java Runtime. -->
+sudo apt -y update && sudo apt -y install default-jre
+
+<!-- Create a directory to hold the Minecraft files. -->
+mkdir ~/minecraft
+```
+
+Exit ssh and copy the contents of the aws folder to the minecraft folder
+```
+scp path/to/aws/* <name_of_aws_instance>:~/minecraft
+```
+
+SSH again and type these commands:
+```
+    <!-- Update the server and install the Java Runtime. -->
+    1. sudo apt -y update && sudo apt -y install default-jre screen
+    <!-- Create a directory to hold the Minecraft files. -->
+    2. mkdir ~/minecraft
+    3. cd ~/minecraft
+    <!-- Accept the EULA agreement  -->
+    4. echo "eula=true" > eula.txt
+```
+
+  To Run the Minecraft server, ssh back into the Lightsail instance and run the following command:
+```
+  sudo mv ~/minecraft/minecraft.service /etc/systemd/system
+  sudo systemctl enable minecraft.service
+  sudo systemctl start minecraft.service
 ```
