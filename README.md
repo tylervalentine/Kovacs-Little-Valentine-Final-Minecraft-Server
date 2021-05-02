@@ -16,9 +16,9 @@
 
 ## Usage
 
-To start the Minecraft server locally, enter the local_server folder...
+##To start the Minecraft server locally, enter the local_server folder...
 
-Edit the start_command.sh file and enter your auth token:
+Edit the start_command.sh file and enter your auth token (get ngrok auth token from ngrok.com):
 ```
 ngrok authtoken <auth token here>
 ```
@@ -28,13 +28,15 @@ Then run this command in terminal
 bash start_command.sh
 ```
 
-To start the Minecraft server in Vagrant, enter the vm folder and type:
+##To start the Minecraft server in Vagrant, enter the vm folder and type:
 
 ```
 vagrant up
 ```
 
-To start the Minecraft server using AWS Lightsail:
+Copy paste the IP from the last few lines of the vagrant setup process. Looks like #.tcp.ngrok.io:#####
+
+##To start the Minecraft server using AWS Lightsail:
 ```
   1. Login into your AWS Account.
   2. Create a Lightsail instance using Ubuntu.
@@ -50,7 +52,7 @@ Add the following to the config file
 ```
 Host <name_of_aws_instance>
   User <user>
-  HostName <IP Address>
+  HostName <Public IP Address>
   IdentityFile <Path to default lightsail pem file>
 ```
 
