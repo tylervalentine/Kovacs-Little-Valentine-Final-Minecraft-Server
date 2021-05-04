@@ -11,23 +11,23 @@ Vagrant.configure("2") do |config|
     apt-get update
     apt-get remove -y --purge man-db
     apt-get upgrade
-    apt-get install -y default-jre
+    apt-get install -y default-jre # installing java environment
 
     mkdir /server
     chown vagrant:vagrant -R /server # Necessary for minecraft to make new sub directories.
     cd /server
 
-    cp -r /vagrant_data/* .
+    cp -r /vagrant_data/* . # copying all data from the shared folder into /server (-r stands for recursive for copying folders with content)
     
-    mv /server/minecraft.service /etc/systemd/system
+    mv /server/minecraft.service /etc/systemd/system # Putting the minecraft.service in place and starting the server
     systemctl enable minecraft.service
     systemctl start minecraft.service
 
     # https://www.youtube.com/watch?v=dC-hecmyxr4&ab_channel=ForeverJonny
     snap install ngrok # NGROK allows anyone to join the server if they have the link
     ngrok authtoken 1r876itpaXZWHSQFbT8qLeDkbbS_adj4zYJZuGfyYtFGYTtX
-    ngrok tcp -region us 25565 &
-    sleep 3
+    ngrok tcp -region us 25565 & # starts ngrok in the background on port 25565
+    sleep 3 # sleep because we have to give ngrok a moment to start before retrieving the url
     curl http://127.0.0.1:4040/api/tunnels
     
   SHELL
