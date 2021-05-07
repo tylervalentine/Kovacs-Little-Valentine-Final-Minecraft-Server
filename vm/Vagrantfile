@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
 
     # https://www.youtube.com/watch?v=dC-hecmyxr4&ab_channel=ForeverJonny
     snap install ngrok # NGROK allows anyone to join the server if they have the link
-    ngrok authtoken 1r876itpaXZWHSQFbT8qLeDkbbS_adj4zYJZuGfyYtFGYTtX
+    ngrok authtoken <Auth Token Here>
     ngrok tcp -region us 25565 & # starts ngrok in the background on port 25565
     sleep 3 # sleep because we have to give ngrok a moment to start before retrieving the url
     curl http://127.0.0.1:4040/api/tunnels
