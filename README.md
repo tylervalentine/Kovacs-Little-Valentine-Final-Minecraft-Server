@@ -16,7 +16,7 @@
 
 ## Usage
 
-##To start the Minecraft server locally, enter the local_server folder...
+## To start the Minecraft server locally, enter the local_server folder...
 
 Edit the start_command.sh file and enter your auth token (get ngrok auth token from ngrok.com):
 ```
